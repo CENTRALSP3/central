@@ -15,19 +15,17 @@
       font-family: 'Inter', system-ui, sans-serif;
       background: #f2eded;
       color: #1a1a1a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      margin: 0;
+      padding: 16px;
     }
 
     .canvas {
-      width: 1400px;
-      max-width: calc(100vw - 40px);
-      height: auto;
-      min-height: 90vh;
-      max-height: calc(100vh - 40px);
+      width: 100%;
+      max-width: 1400px;
+      min-height: auto;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 260px 1fr;
       gap: 0;
       background: #f2eded;
       border-radius: 20px;
@@ -148,10 +146,11 @@
       grid-row: 1 / 2;
       display: flex;
       flex-direction: column;
-      padding: 40px 48px;
+      padding: 32px 40px 40px;
       position: relative;
       z-index: 5;
-      overflow-y: auto;
+      overflow: visible;
+      min-width: 0;
     }
 
     .content-header h1 {
@@ -181,9 +180,23 @@
     /* ===== CARDS GRID ===== */
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 20px;
       flex: 1;
+      width: 100%;
+    }
+
+    @media (min-width: 901px) and (max-width: 1200px) {
+      .canvas { grid-template-columns: 220px 1fr; }
+      .content { padding: 28px 28px 36px; }
+      .cards-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+      .tests-hero { padding: 28px 28px; }
+      .tests-hero h2 { font-size: 20px; }
+    }
+
+    @media (min-width: 1201px) {
+      .canvas { width: min(100%, 1400px); }
+      .tests-dual { max-width: 720px; }
     }
 
     .card {
@@ -492,8 +505,8 @@
       <div class="content-divider"></div>
 
       <section class="tests-hero" aria-label="Testes de autoconhecimento">
-        <h2>Testes <span>TeclaPonto</span></h2>
-        <p>Escolha o instrumento de autoconhecimento — perfil comportamental DISC ou traços de personalidade Big Five (OCEAN).</p>
+        <h2>Testes de <span>Autoconhecimento</span></h2>
+        <p>Dois instrumentos <strong>distintos</strong>: DISC mede comportamento (forced-choice); OCEAN mede traços de personalidade (Likert).</p>
         <div class="tests-dual">
           <a href="https://centralsp3.github.io/TESTEDISC/" class="tests-btn tests-btn-disc" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
