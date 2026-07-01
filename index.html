@@ -220,6 +220,85 @@
     .card-servicenow::after { background: linear-gradient(90deg, #2ecc71, #27ae60); }
     .card-teclaponto::after { background: linear-gradient(90deg, #1e5175, #2a7ab0); }
     .card-testedisc::after { background: linear-gradient(90deg, #E74C3C, #F39C12); }
+    .card-personalidade::after { background: linear-gradient(90deg, #8E44AD, #2980B9); }
+
+    /* ===== TESTES HUB ===== */
+    .tests-hero {
+      background: linear-gradient(135deg, rgba(26,26,46,0.95), rgba(22,33,62,0.92));
+      border-radius: 20px;
+      padding: 32px 36px;
+      margin-bottom: 28px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .tests-hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(243,156,18,0.25), transparent 70%);
+      pointer-events: none;
+    }
+    .tests-hero h2 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      position: relative;
+      z-index: 1;
+    }
+    .tests-hero h2 span { color: #F39C12; }
+    .tests-hero p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
+    }
+    .tests-dual {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+    .tests-btn {
+      flex: 1;
+      min-width: 200px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      border: 2px solid transparent;
+    }
+    .tests-btn-disc {
+      background: linear-gradient(135deg, #E74C3C, #F39C12);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(231,76,60,0.35);
+    }
+    .tests-btn-disc:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(231,76,60,0.45);
+    }
+    .tests-btn-ocean {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border-color: rgba(142,68,173,0.8);
+      backdrop-filter: blur(4px);
+    }
+    .tests-btn-ocean:hover {
+      background: rgba(142,68,173,0.35);
+      transform: translateY(-2px);
+    }
+    .tests-btn svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
     .card-sacolaon::after { background: linear-gradient(90deg, #f39c12, #e67e22); }
     .card-bolsaprotegida::after { background: linear-gradient(90deg, #e74c3c, #c0392b); }
     .card-portalinfinity::after { background: linear-gradient(90deg, #8e44ad, #9b59b6); }
@@ -397,8 +476,8 @@
       </div>
 
       <div class="sidebar-stats">
-        <div class="stat-number">6</div>
-        <div class="stat-label">Cursos Disponíveis</div>
+        <div class="stat-number">7</div>
+        <div class="stat-label">Plataformas</div>
       </div>
 
       <div class="sidebar-footer">CENTRAL SP3 &copy; 2026</div>
@@ -411,6 +490,21 @@
         <p>Selecione um dos sites abaixo para acessar o conteúdo completo</p>
       </div>
       <div class="content-divider"></div>
+
+      <section class="tests-hero" aria-label="Testes de autoconhecimento">
+        <h2>Testes <span>TeclaPonto</span></h2>
+        <p>Escolha o instrumento de autoconhecimento — perfil comportamental DISC ou traços de personalidade Big Five (OCEAN).</p>
+        <div class="tests-dual">
+          <a href="https://centralsp3.github.io/TESTEDISC/" class="tests-btn tests-btn-disc" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Teste DISC
+          </a>
+          <a href="https://centralsp3.github.io/PERSONALIDADE/" class="tests-btn tests-btn-ocean" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+            Teste Personalidade
+          </a>
+        </div>
+      </section>
 
       <div class="cards-grid">
 
@@ -495,12 +589,27 @@
         </a>
 
         <!-- TESTEDISC -->
-        <a href="https://centralsp3.github.io/TESTEDISC" target="_blank" rel="noopener noreferrer" class="card card-testedisc">
+        <a href="https://centralsp3.github.io/TESTEDISC/" target="_blank" rel="noopener noreferrer" class="card card-testedisc">
           <div class="card-icon card-icon-orange">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
           </div>
           <h2>Teste DISC</h2>
-          <p>Avaliação comportamental completa baseada no método DISC — descubra seu perfil de forma interativa.</p>
+          <p>56 afirmações — perfil comportamental Natural + Adaptado (v2.1).</p>
+          <div class="card-footer">
+            <span class="card-badge badge-on-demand">On Demand</span>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- PERSONALIDADE -->
+        <a href="https://centralsp3.github.io/PERSONALIDADE/" target="_blank" rel="noopener noreferrer" class="card card-personalidade">
+          <div class="card-icon card-icon-purple">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+          </div>
+          <h2>Teste Personalidade</h2>
+          <p>60 afirmações Likert — Big Five OCEAN com perfil Natural + Adaptado (v1.0).</p>
           <div class="card-footer">
             <span class="card-badge badge-on-demand">On Demand</span>
             <div class="card-arrow">
